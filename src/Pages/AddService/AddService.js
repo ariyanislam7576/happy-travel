@@ -21,7 +21,7 @@ const AddService = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input {...register("name", { required: true, maxLength: 20 })} placeholder='Service name' />
                  <br /> <br />
-                <input {...register("img")} placeholder='Service image url' /> 
+                <input {...register("img" ,{required: true})} placeholder='Service image url' /> 
                 <br /> <br />
                 <input type="number" {...register("price")} placeholder='Price' /> 
                 <br /> <br />

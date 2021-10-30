@@ -4,13 +4,13 @@ import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div className='container'>
-            <div className="row my-5">
-                <div className="col-md-4 text-start">
+        <div>
+            <div className="row my-5 bg-dark text-white">
+                <div className="col-md-4 text-start m-3">
                     <h2>Happy Travel</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error labore fugit atque nulla placeat illum excepturi mollitia suscipit vel, delectus nihil consectetur necessitatibus aspernatur culpa sapiente aperiam vero, quod magnam!</p>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-2">
                 <Nav className="me-auto d-block">
                         <NavLink className='m-3 d-block text-decoration-none' to="/home">Home</NavLink>
                         <NavLink className='m-3 d-block text-decoration-none' to="/about">About</NavLink>
@@ -18,7 +18,7 @@ const Footer = () => {
                         <NavLink className='m-3 d-block text-decoration-none' to="/addservice">Add Service</NavLink>
                     </Nav>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4 m-3">
                     <div>
                         <input type="text" placeholder='Enter your name' /><br /><br />
                         <input type="email" placeholder='Enter your email' /> <br /> <br />
