@@ -7,7 +7,7 @@ const AddService = () => {
     const { register, handleSubmit, reset, } = useForm();
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:4500/addservice',data)
+        axios.post('https://thawing-ridge-33922.herokuapp.com/addservice',data)
          .then(res => {
              console.log(res);
         if(res.data){

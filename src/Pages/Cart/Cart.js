@@ -10,7 +10,7 @@ const Cart = () => {
     const [service, setService] = useState([])
     const { register, handleSubmit, reset, } = useForm();
     useEffect(() => {
-        fetch(`http://localhost:4500/addservice/${id}`)
+        fetch(`https://thawing-ridge-33922.herokuapp.com/addservice/${id}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
