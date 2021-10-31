@@ -16,9 +16,9 @@ const Header = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <NavLink className='mx-3 text-white text-decoration-none' to="/home">Home</NavLink>
-                            <NavLink className='mx-3 text-white text-decoration-none' to="/about">about</NavLink>
+                            <NavLink className='mx-3 text-white text-decoration-none' to="/manageorder">Manage Order</NavLink>
                             <NavLink className='mx-3 text-white text-decoration-none' to="/mybooking">My Order</NavLink>
-                            <NavLink className='mx-3 text-white text-decoration-none' to="/addservice">Add Service</NavLink>
+                            <NavLink className='mx-3 text-white text-decoration-none' to="/addservice">Add Destination</NavLink>
                             {user.email ?
                                 <button onClick={logOut} className="btn-dark border-0">Log Out</button>
                                 :

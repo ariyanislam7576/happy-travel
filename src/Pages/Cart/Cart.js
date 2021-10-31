@@ -3,6 +3,7 @@ import { Card, Col, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import useFirebase from '../../Hooks/useFirebase';
+import axios from 'axios';
 
 const Cart = () => {
     const {user} = useFirebase()
@@ -17,7 +18,17 @@ const Cart = () => {
                 setService(data)
             })
     }, [])
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        console.log(data);
+        axios.post('http://localhost:4500/manageorders',data)
+         .then(res => {
+             console.log(res);
+        if(res.data){
+            alert('service added')
+            reset()
+        }
+    })
+    }
     return (
         <div className='container my-5'>
             <Row xs={1} md={3} className="g-4 text-center">
@@ -34,7 +45,7 @@ const Cart = () => {
                     </Card>
                 </Col>
                 <form className='my-5' onSubmit={handleSubmit(onSubmit)}>
-                <input defaultValue={user?.displayName} {...register("name", { required: true, maxLength: 20 })} placeholder='name' />
+                <input defaultValue={user?.displayName} {...register("name", { required: true, maxLength: 60 })} placeholder='name' />
                  <br /> <br />
                 <input type="email" defaultValue={user?.email} {...register("email" ,{required: true})} placeholder='email' /> 
                 <br /> <br />
@@ -43,7 +54,7 @@ const Cart = () => {
                 <input type="number" {...register("phone")} placeholder='Phone' /> 
                 <br /> <br />
                 <textarea {...register("description", { required: false, maxLength: 2000 })} placeholder='description' /> <br /> <br />
-                <input type="submit" />
+                <input type="submit" value="procced to booking" />
             </form>
             </Row>
         </div>

@@ -25,7 +25,7 @@ const useFirebase = () => {
             .finally(() => setLoading(false))
     }
 
-    // observe whether user auth state changed or not
+    // Using onAuthChange
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
