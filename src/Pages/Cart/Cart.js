@@ -19,7 +19,7 @@ const Cart = () => {
             })
     }, [])
     const onSubmit = data => {
-        axios.post('http://localhost:4500/manageorders',data)
+        axios.post('https://thawing-ridge-33922.herokuapp.com/manageorders',data)
          .then(res => {
              console.log(res);
         if(res.data){

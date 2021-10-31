@@ -2,11 +2,11 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Row, Spinner } from 'react-bootstrap';
-import useFirebase from '../../../Hooks/useFirebase';
+import useAuth from '../../../Hooks/useAuth';
 import SingleService from './SingleService/SingleService';
 
 const Services = () => {
-    const {loading} = useFirebase()
+    const {loading} = useAuth()
     const [service, setService] = useState([])
     useEffect(() => {
         fetch('https://thawing-ridge-33922.herokuapp.com/addservice')

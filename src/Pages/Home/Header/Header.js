@@ -2,11 +2,11 @@ import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import useFirebase from '../../../Hooks/useFirebase';
+import useAuth from '../../../Hooks/useAuth';
 
 
 const Header = () => {
-    const { user, logOut } = useFirebase()
+    const { user, logOut } = useAuth()
     return (
         <div>
             <Navbar bg="dark" variant="dark" expand="lg">
