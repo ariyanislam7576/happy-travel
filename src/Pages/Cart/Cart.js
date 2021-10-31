@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
-import useFirebase from '../../Hooks/useFirebase';
 import axios from 'axios';
+import useAuth from '../../Hooks/useAuth';
 
 const Cart = () => {
-    const {user} = useFirebase()
+    const {user} = useAuth()
     const { id } = useParams()
     const [service, setService] = useState([])
     const { register, handleSubmit, reset, } = useForm();
@@ -19,7 +19,6 @@ const Cart = () => {
             })
     }, [])
     const onSubmit = data => {
-        console.log(data);
         axios.post('http://localhost:4500/manageorders',data)
          .then(res => {
              console.log(res);
@@ -48,6 +47,8 @@ const Cart = () => {
                 <input defaultValue={user?.displayName} {...register("name", { required: true, maxLength: 60 })} placeholder='name' />
                  <br /> <br />
                 <input type="email" defaultValue={user?.email} {...register("email" ,{required: true})} placeholder='email' /> 
+                <br /> <br />
+                <input defaultValue={service.name} {...register("place" ,{required: true})} placeholder='Destination name' /> 
                 <br /> <br />
                 <input  {...register("address", { required: true, maxLength: 40 })} placeholder='address' />
                  <br /> <br />

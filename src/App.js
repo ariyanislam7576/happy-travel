@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
+import AuthProvider from './context/AuthProvidor';
 import AddService from './Pages/AddService/AddService';
 import Cart from './Pages/Cart/Cart';
 import Footer from './Pages/Home/Footer/Footer';
@@ -15,6 +16,7 @@ import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 function App() {
   return (
     <div className="App">
+      <AuthProvider>
         <Router>
           <Header></Header>
           <Switch>
@@ -45,6 +47,7 @@ function App() {
           </Switch>
           <Footer></Footer>
         </Router>
+      </AuthProvider>
 
     </div>
   );
