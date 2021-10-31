@@ -11,7 +11,7 @@ const AddService = () => {
          .then(res => {
              console.log(res);
         if(res.data){
-            alert('service added')
+            alert('Destination added')
             reset()
         }
     })

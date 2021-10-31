@@ -24,7 +24,7 @@ const Cart = () => {
          .then(res => {
              console.log(res);
         if(res.data){
-            alert('service added')
+            alert('ticked booked')
             reset()
         }
     })
