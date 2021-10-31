@@ -1,9 +1,9 @@
-import React from 'react';
 
 const ManageOrder = () => {
+
     return (
         <div>
-            <h2>this is manage order</h2>
+            <h1>this is manage user</h1>
         </div>
     );
 };

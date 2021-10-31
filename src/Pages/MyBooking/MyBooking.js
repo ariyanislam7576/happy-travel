@@ -37,6 +37,7 @@ const MyBooking = () => {
     }
     return (
         <div>
+            <h2>Your order {order.length}</h2>
             {
                 order.map(booking => <div key={booking._id}>
                     <div className="row">
